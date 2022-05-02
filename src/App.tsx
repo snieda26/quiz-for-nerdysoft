@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios'
+import { Question } from './types';
+import './styles/_all.scss'
+import { Home, Quiz, Result } from './pages';
+import { Routes, Route } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setQuestions } from './redux/actions';
 
-function App() {
+export default function App() {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    const randomCategory = Math.floor(Math.random() * (32 - 9 + 1) + 9)
+
+    axios.get(`https://opentdb.com/api.php?amount=10&category=${randomCategory}`)
+      .then(res => dispatch(setQuestions(res.data.results)))
+  }, [])
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Routes>
+        <Route path="/quiz" element={<Quiz />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/result" element={<Result />} />
+      </Routes>
+    </>
+  )
 }
-
-export default App;

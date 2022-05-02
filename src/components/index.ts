@@ -1,0 +1,1 @@
+export { default as AnswerButton } from './common/AnswerButton/AnswerButton'

@@ -1,0 +1,128 @@
+.home {
+    width: 950px;
+    height: 350px;
+
+    &__text {
+        height: 220px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__sentence {
+        text-align: center;
+        font-size: 50px;
+        &:nth-child(3) {
+            margin-top: 40px;
+        }
+    }
+
+    &__questions {
+        display: flex;
+        flex-direction: column;
+        padding-top: 55px;
+
+        * {
+            display: block;
+            margin-top: 35px;
+            text-align: center;
+        }
+    }
+
+    &__buttons {
+        padding-top: 10px;
+    }
+
+    &__btn {
+        width: 150px;
+        height: 50px;
+        text-align: center;
+        background-color: #23B6E4;
+        border-radius: 10px;
+        cursor: pointer;
+        margin: 0 auto;
+        display: block;    
+        border: none;
+        margin-top: 70px;
+        font-size: 30px;
+        font-weight: 500;
+        transition: all 0.4s ease;
+        
+        &:hover {
+            transform: scale(1.15);
+            background-color: #079BCA;
+        }
+    }
+
+    
+}
+
+.show-list {
+    width: 150px;
+    height: 30px;
+    font-size: 19px;
+    margin-top: 10px;
+}
+
+.lucky {
+    width: 200px;
+    background-color: rgb(39, 189, 139);
+    margin-top: 20px;
+    &:hover {
+        background-color: rgb(1, 175, 117);
+    }
+}
+
+@media (max-width: 955px) {
+    .home {
+        width: 450px;
+        height: 250px;
+
+        &__sentence {
+            font-size: 40px;
+        }
+
+        &__text {
+            height: 200px;
+        }
+    }
+}
+
+@media (max-width: 466px) {
+    .home {
+        width: 250px;
+        height: 100px;
+
+        &__sentence {
+            font-size: 20px;
+        }
+
+        &__text {
+            height: 100px;
+        }
+
+        &__btn {
+            width: 100px;
+            font-size: 11px;
+            height: 30px;
+        }
+        &__questions {
+            padding-top: 25px;
+        }
+        &__question {
+            font-size: 11px;
+            margin-top: 15px;
+        }
+        &__buttons {
+            padding-top: 10px;
+        }
+    }
+
+    .contact__btn {
+        margin-top: 10px;
+        width: 100px;
+        height: 30px;
+        font-size: 11px;
+        padding: 0 10px;
+    }
+}
