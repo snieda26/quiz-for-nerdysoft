@@ -28,8 +28,8 @@ const Stopwatch: FC<StopwatchProps> = ({ timeOn }) => {
     }, [timeOn])
 
 
-    var min = Math.floor(seconds / 60);
-    var sec = seconds - min * 60;
+    let min = Math.floor(seconds / 60);
+    let sec = seconds - min * 60;
     return (
         <div className='stopwatch'>{min}:{sec}</div>
     )

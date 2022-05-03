@@ -7,12 +7,11 @@ import './Results.scss'
 const Result: FC = () => {
     const { totalScore, totalTime } = useSelector((state: RootState) => state.quiz)
 
-    var min = Math.floor(totalTime / 60);
-    var sec = totalTime - min * 60;
+    let min = Math.floor(totalTime / 60);
+    let sec = totalTime - min * 60;
 
     return (
         <>
-
             <div className="results">
                 <div className="results__body">
                     <div className="results__text">
